@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/activity_main.xml" value="0.3421875" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_iniciar_sesion.xml" value="0.3421875" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_planificador_diario.xml" value="0.25510204081632654" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_registrarse.xml" value="0.35625" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

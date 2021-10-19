@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Planificador De Tareas</string>
+    <string name="planificador_de_tareas">Planificador de tareas</string>
+    <string name="edt_usuario">Escriba el usuario</string>
+    <string name="edt_contraseña">Escriba la contraseña</string>
+    <string name="bt_iniciar_sesion">INICIAR SESION</string>
+    <string name="bt_registrarse">REGISTRARSE</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="crear_usuario">Escriba un usuario</string>
+    <string name="crear_contraseña">Escriba la contraseña</string>
+
+    <string name="titulo">PLANIFICADOR SEMANAL</string>
+    <string name="dia_1">LUNES</string>
+    <string name="dia_2">MARTES</string>
+    <string name="dia_3">MIERCOLES</string>
+    <string name="dia_4">JUEVES</string>
+    <string name="dia_5">VIERNES</string>
+    <string name="dia_6">SABADO</string>
+    <string name="dia_7">DOMINGO</string>
+
+
+
+
+
+
+
 </resources>
