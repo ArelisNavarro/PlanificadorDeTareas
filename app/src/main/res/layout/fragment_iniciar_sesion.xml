@@ -4,102 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IniciarSesion" >
+    >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/titulo"
-        app:layout_constraintEnd_toStartOf="@+id/imgbOpciones"
+        android:text="@string/planificador_de_tareas"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <TextView
-            android:id="@+id/tvLunes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_1" />
-
-        <TextView
-            android:id="@+id/tvMartes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_2" />
-
-        <TextView
-            android:id="@+id/tvMiercoles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_3" />
-
-        <TextView
-            android:id="@+id/tvJueves"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_4" />
-
-        <TextView
-            android:id="@+id/tvViernes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_5" />
-
-        <TextView
-            android:id="@+id/tvSabado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_6" />
-
-        <TextView
-            android:id="@+id/tvDomingo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/dia_7" />
-
-    </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/imgbOpciones"
+    <EditText
+        android:id="@+id/edtUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:src="@android:drawable/arrow_down_float"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/edt_usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edtContraseña"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/edtContraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/edt_contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edtUsuario"
+        app:layout_constraintStart_toStartOf="@+id/edtUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/edtUsuario"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btIniciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/bt_iniciar_sesion"
+        app:layout_constraintBottom_toTopOf="@+id/btRedirigeRegristrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtContraseña" />
+
+    <Button
+        android:id="@+id/btRedirigeRegristrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/bt_registrarse"
+        app:layout_constraintEnd_toEndOf="@+id/btIniciarSesion"
+        app:layout_constraintStart_toStartOf="@+id/btIniciarSesion"
+        app:layout_constraintTop_toBottomOf="@+id/btIniciarSesion" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcRegistrarse"
+        android:name="com.example.planificadordetareas.BlackFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRedirigeRegristrarse" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

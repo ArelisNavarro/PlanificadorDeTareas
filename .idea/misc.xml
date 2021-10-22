@@ -5,8 +5,9 @@
       <map>
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/activity_main.xml" value="0.3421875" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_iniciar_sesion.xml" value="0.3421875" />
-        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_planificador_diario.xml" value="0.25510204081632654" />
+        <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_planificador_diario.xml" value="0.33" />
         <entry key="..\:/Users/Eric Navarro/AndroidStudioProjects/PlanificadorDeTareas/app/src/main/res/layout/fragment_registrarse.xml" value="0.35625" />
+        <entry key="..\:/Users/Eric Navarro/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.35625" />
       </map>
     </option>
   </component>
@@ -15,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3421875" />
+      </ProjectState>
+    </option>
   </component>
 </project>
