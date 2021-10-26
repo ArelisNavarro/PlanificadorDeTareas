@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.planificadordetareas.application.App
-
 
 class IniciarSesion() : Fragment() {
 
@@ -22,8 +22,8 @@ class IniciarSesion() : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_iniciar_sesion, container, false) }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         var application = requireActivity().application as App
         var db= application.db
 
@@ -31,19 +31,16 @@ class IniciarSesion() : Fragment() {
 
         var preferences=context?.getSharedPreferences("registrar_usuario", Context.MODE_PRIVATE)
 
-
         var usuario=view.findViewById<EditText>(R.id.edtUsuario)
         var contraseña=view.findViewById<EditText>(R.id.edtContraseña)
         var iniciarSecion=view.findViewById<Button>(R.id.btIniciarSesion)
         var registrarse=view.findViewById<Button>(R.id.btRedirigeRegristrarse)
+        var recuperarContrasena=view.findViewById<TextView>(R.id.tvRecuperarContraseña)
 
        iniciarSecion.setOnClickListener(){
 
            var usuarioTexto=usuario.text.toString()
            var contraseñaTexto=contraseña.text.toString()
-
-           var usuarioGuardado=preferences?.getString("usuario","No existe")
-           var contraseñaGuardada=preferences?.getString("contraseña","No existe")
 
            var user=usuarioTexto
            var result =db.rawQuery("SELECT COUNT(*) AS cantidad FROM Usuarios WHERE usuario='$user'",null)
@@ -53,7 +50,12 @@ class IniciarSesion() : Fragment() {
 
            if (catidadRegistor>0){
 
-               if (usuarioTexto==usuarioGuardado && contraseñaTexto==contraseñaGuardada){
+               var resultadoi=db.rawQuery("SELECT contraseña from Usuarios where usuario='$user'",null)
+               resultadoi.moveToFirst()
+               val Rcontraseña =resultadoi.getString(0)
+
+
+               if (contraseñaTexto.equals(Rcontraseña)){
 
                    var transacion=manager?.beginTransaction()
                    transacion?.replace(R.id.fragmentContainerView,PlanificadorDiario())
@@ -61,17 +63,23 @@ class IniciarSesion() : Fragment() {
 
                } else Toast.makeText(context,"Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
 
-
                preferences?.edit()?.putBoolean("Estado_Inicio_Sesion",true)?.commit()
 
            }else{
 
                Toast.makeText(context,"El usuario no existe; por favor Registrese",Toast.LENGTH_SHORT).show()
-
            }
-
-
        }
+
+
+        recuperarContrasena.setOnClickListener(){
+
+            var transacion=manager?.beginTransaction()
+            transacion?.replace(R.id.fcRegistrarse,RecuperarContrasena())
+            transacion?.commit()
+        }
+
+
 
         registrarse.setOnClickListener(){
 
@@ -81,8 +89,6 @@ class IniciarSesion() : Fragment() {
             registrarse.visibility=View.GONE
         }
 
-
     }
-
 
 }

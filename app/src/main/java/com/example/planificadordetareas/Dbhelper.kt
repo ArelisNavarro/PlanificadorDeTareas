@@ -11,8 +11,7 @@ class Dbhelper(contex: Context?,name:String, cursor: SQLiteDatabase.CursorFactor
 
     override fun onCreate(db: SQLiteDatabase?) {
 
-        db?.execSQL("CREATE TABLE IF NOT EXISTS Usuarios(id INTEGER PRIMARY KEY AUTOINCREMENT, usuario TEXT UNIQUE, contraseña TEXT)")
-
+        db?.execSQL("CREATE TABLE IF NOT EXISTS Usuarios(id INTEGER PRIMARY KEY AUTOINCREMENT, usuario TEXT UNIQUE, contraseña TEXT, preguntaSeguridad TEXT)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

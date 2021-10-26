@@ -19,12 +19,6 @@ class MainActivity : AppCompatActivity() {
             var transacios=manager.beginTransaction()
             transacios.replace(R.id.fragmentContainerView,PlanificadorDiario())
             transacios.commit()
-
-
-
-
-
-
         }
 
 

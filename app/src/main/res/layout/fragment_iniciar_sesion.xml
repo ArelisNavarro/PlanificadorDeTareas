@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     >
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/planificador_de_tareas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/edtUsuario"
         android:layout_width="wrap_content"
@@ -27,7 +17,7 @@
         app:layout_constraintBottom_toTopOf="@+id/edtContraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -47,22 +37,34 @@
         android:id="@+id/btIniciarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/bt_iniciar_sesion"
         app:layout_constraintBottom_toTopOf="@+id/btRedirigeRegristrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtContraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/edtContraseña"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvRecuperarContraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tv_recuperar_contraseña"
+        app:layout_constraintEnd_toEndOf="@+id/btIniciarSesion"
+        app:layout_constraintStart_toStartOf="@+id/btIniciarSesion"
+        app:layout_constraintTop_toBottomOf="@+id/btIniciarSesion" />
 
     <Button
         android:id="@+id/btRedirigeRegristrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/bt_registrarse"
-        app:layout_constraintEnd_toEndOf="@+id/btIniciarSesion"
-        app:layout_constraintStart_toStartOf="@+id/btIniciarSesion"
-        app:layout_constraintTop_toBottomOf="@+id/btIniciarSesion" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecuperarContraseña" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcRegistrarse"

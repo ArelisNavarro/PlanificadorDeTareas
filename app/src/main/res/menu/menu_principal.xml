@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_idioma"
+        android:title="Esp/Eng" />
+    <item
+        android:id="@+id/menu_tema"
+        android:title="Claro/Oscuro" />
+    <item
+        android:id="@+id/menu_cerrarSesion"
+        android:title="Cerrar sesiòn" />
+</menu>

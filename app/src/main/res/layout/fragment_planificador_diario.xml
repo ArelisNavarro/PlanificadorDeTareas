@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/titulo"
-        app:layout_constraintEnd_toStartOf="@+id/SpnOpciones"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearDiasSemana"
         android:layout_width="409dp"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
@@ -92,14 +93,4 @@
 
     </LinearLayout>
 
-    <Spinner
-        android:id="@+id/SpnOpciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="38dp"
-        android:src="@android:drawable/arrow_down_float"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

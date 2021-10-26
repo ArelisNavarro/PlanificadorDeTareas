@@ -4,6 +4,7 @@
     <string name="edt_usuario">Escriba el usuario</string>
     <string name="edt_contraseña">Escriba la contraseña</string>
     <string name="bt_iniciar_sesion">INICIAR SESION</string>
+    <string name="tv_recuperar_contraseña">Recuperar Contraseña</string>
     <string name="bt_registrarse">REGISTRARSE</string>
 
 
@@ -12,6 +13,13 @@
 
     <string name="crear_usuario">Escriba un usuario</string>
     <string name="crear_contraseña">Escriba la contraseña</string>
+    <string name="pregunta_de_seguridad">¿Cuál es su color favorito?</string>
+
+
+    <string name="bt_enviar">Enviar</string>
+    <string name="bt_cambiarContraseña">Cambiar</string>
+    <string name="edt_nueva_contraseña">Escriba su nueva contraseña</string>
+
 
     <string name="titulo">PLANIFICADOR SEMANAL</string>
     <string name="dia_1">LUNES</string>
@@ -21,11 +29,6 @@
     <string name="dia_5">VIERNES</string>
     <string name="dia_6">SABADO</string>
     <string name="dia_7">DOMINGO</string>
-
-
-
-
-
 
 
 </resources>

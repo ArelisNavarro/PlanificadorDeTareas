@@ -14,18 +14,10 @@ import com.example.planificadordetareas.application.App
 
 class Registrarse : Fragment() {
 
-
-
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         return inflater.inflate(R.layout.fragment_registrarse, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -36,24 +28,21 @@ class Registrarse : Fragment() {
         var crearUsuario= view.findViewById<EditText>(R.id.edtCrearUsuario)
         var crearContraseña= view.findViewById<EditText>(R.id.edtCrearContraseña)
         var confirmarRegistro= view.findViewById<Button>(R.id.btConfirmaRegistro)
+        var preguntaSeguridad= view.findViewById<EditText>(R.id.edtPreguntaSeguridad)
 
         confirmarRegistro.setOnClickListener(){
 
             var textoUsuario=crearUsuario.text.toString()
             var textoContraseña=crearContraseña.text.toString()
+            var textoPreguntaSeguridad=preguntaSeguridad.text.toString()
 
-            var preferences=context?.getSharedPreferences("registrar_usuario", Context.MODE_PRIVATE)
-            var editar=preferences?.edit()
-
-            editar?.putString("usuario",textoUsuario)
-            editar?.putString("contraseña",textoContraseña)
-            editar?.commit()
+            db.execSQL("INSERT INTO Usuarios( usuario, contraseña, preguntaSeguridad ) VALUES ('$textoUsuario','$textoContraseña', '$textoPreguntaSeguridad' )")
 
             Toast.makeText(context,"Registro Existoso",Toast.LENGTH_SHORT).show()
-            db.execSQL("INSERT INTO Usuarios( usuario, contraseña ) VALUES ('$textoUsuario','$textoContraseña')")
 
             crearUsuario.text.clear()
             crearContraseña.text.clear()
+            preguntaSeguridad.text.clear()
         }
 
     }
