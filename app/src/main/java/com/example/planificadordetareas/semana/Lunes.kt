@@ -11,11 +11,7 @@ import com.example.planificadordetareas.R
 class Lunes : Fragment() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +21,11 @@ class Lunes : Fragment() {
         return inflater.inflate(R.layout.dias_de_la_semana, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+    }
 
 
 

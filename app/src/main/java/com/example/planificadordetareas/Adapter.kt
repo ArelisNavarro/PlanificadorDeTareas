@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 class Adapter : RecyclerView.Adapter<Adapter.ViewHold>() {
 
 
-    var lista:ArrayList<String> = arrayListOf()
+    var lista:ArrayList<String> = ArrayList(
+    )
 
 
 

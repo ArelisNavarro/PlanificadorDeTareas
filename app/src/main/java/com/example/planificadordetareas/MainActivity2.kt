@@ -1,17 +1,23 @@
 package com.example.planificadordetareas
 
+import android.opengl.Visibility
 import android.os.Bundle
+import android.view.View
 import android.widget.*
+
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.dias_de_la_semana)
+
 
 
         var tarea=findViewById<TextView>(R.id.tarea)
@@ -22,19 +28,24 @@ class MainActivity2 : AppCompatActivity() {
         var dia=findViewById<TextView>(R.id.dia)
         var basurero=findViewById<ImageView>(R.id.basurero)
         var pestañas=findViewById<ImageView>(R.id.pestaña)
-        var recicle = findViewById<RecyclerView>(R.id.reciclador)
+        var reciclerdor = findViewById<RecyclerView>(R.id.reciclador)
+        var botonflotante=findViewById<Button>(R.id.abrirEdit)
+
+
+
 
         var manager= LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        recicle.layoutManager=manager
+        reciclerdor.layoutManager=manager
 
 
-        recicle.addItemDecoration(DividerItemDecoration(this, RecyclerView.HORIZONTAL))
+
+        reciclerdor.addItemDecoration(DividerItemDecoration(this, RecyclerView.HORIZONTAL))
 
 
         var objetoadaptador= Adapter()
 
-        recicle.adapter=objetoadaptador
+        reciclerdor.adapter=objetoadaptador
 
 
         var listadeladaptador= objetoadaptador.lista
@@ -54,7 +65,9 @@ class MainActivity2 : AppCompatActivity() {
 
             }else{
                 listadeladaptador.add(textosacado.toString())
-                objetoadaptador.notifyDataSetChanged()
+
+
+                // objetoadaptador.notifyDataSetChanged()
 
                 agregar.setText("")
 
@@ -69,9 +82,19 @@ class MainActivity2 : AppCompatActivity() {
                 textodeladescripciob.setText("")
 
             }
+            agregar.visibility= View.GONE
+            textodeladescripciob.visibility= View.GONE
 
 
 
+
+
+
+        }
+
+        botonflotante.setOnClickListener{
+            agregar.visibility= View.VISIBLE
+            textodeladescripciob.visibility= View.VISIBLE
 
 
         }
