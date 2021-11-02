@@ -68,7 +68,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcRegistrarse"
-        android:name="com.example.planificadordetareas.BlackFragment"
+        android:name="com.example.planificadordetareas.fragments.BaseFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"

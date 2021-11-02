@@ -1,8 +1,6 @@
-package com.example.planificadordetareas
+package com.example.planificadordetareas.fragments
 
-import android.appwidget.AppWidgetProvider
 import android.database.sqlite.SQLiteDatabase
-import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,11 +9,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.planificadordetareas.R
 import com.example.planificadordetareas.application.App
+import com.example.planificadordetareas.utilidades.toast
 
-class RecuperarContrasena : Fragment() {
-     val db:SQLiteDatabase
-        get() = (requireActivity().application as App).db
+class RecuperarContrasena : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +44,7 @@ class RecuperarContrasena : Fragment() {
             var tiene=cursor.moveToFirst()
 
             if (!tiene){
-               Toast.makeText(requireContext(),"Usuario no registrado",Toast.LENGTH_SHORT).show()
+               toast("Usuario no registrado")
                 return@setOnClickListener
             }
             var color=cursor.getString(0)
@@ -57,7 +55,7 @@ class RecuperarContrasena : Fragment() {
                 enviar.visibility=View.GONE
                 cambiarContrasena.visibility=View.VISIBLE
 
-            } else Toast.makeText(requireContext(),"Error, Respuesta de seguridad incorrecta",Toast.LENGTH_SHORT).show()
+            } else toast("Error, Respuesta de seguridad incorrecta")
         }
 
         cambiarContrasena.setOnClickListener(){
@@ -69,7 +67,7 @@ class RecuperarContrasena : Fragment() {
 
             db.execSQL("UPDATE Usuarios SET contraseña= '${textoNuevaContrasena}' WHERE usuario='${textoUsuario}'")
 
-            Toast.makeText(requireContext(),"Su contraseña fue restablecida con exito",Toast.LENGTH_SHORT).show()
+            toast("Su contraseña fue restablecida con exito")
 
             confirmarUsuario.text.clear()
             confirmacionSeguridad.text.clear()

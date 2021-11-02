@@ -2,7 +2,6 @@ package com.example.planificadordetareas.application
 
 import android.app.Application
 import android.database.sqlite.SQLiteDatabase
-import com.example.planificadordetareas.Dbhelper
 
 class App: Application() {
 
@@ -13,7 +12,7 @@ class App: Application() {
     override fun onCreate() {
         super.onCreate()
 
-        var dbhelper= Dbhelper(this,"LosUsuarios",null,1)
+        var dbhelper= Dbhelper(this,"usuarios",null,1)
         db=dbhelper.writableDatabase
     }
 

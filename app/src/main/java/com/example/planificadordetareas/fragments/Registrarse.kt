@@ -1,7 +1,5 @@
-package com.example.planificadordetareas
+package com.example.planificadordetareas.fragments
 
-import android.content.Context
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.planificadordetareas.R
 import com.example.planificadordetareas.application.App
+import com.example.planificadordetareas.utilidades.toast
 
-class Registrarse : Fragment() {
+class Registrarse : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -21,8 +21,6 @@ class Registrarse : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        var application = requireActivity().application as App
-        var db= application.db
 
 
         var crearUsuario= view.findViewById<EditText>(R.id.edtCrearUsuario)
@@ -38,8 +36,7 @@ class Registrarse : Fragment() {
 
             db.execSQL("INSERT INTO Usuarios( usuario, contraseña, preguntaSeguridad ) VALUES ('$textoUsuario','$textoContraseña', '$textoPreguntaSeguridad' )")
 
-            Toast.makeText(context,"Registro Existoso",Toast.LENGTH_SHORT).show()
-
+            toast("Registro Existoso")
             crearUsuario.text.clear()
             crearContraseña.text.clear()
             preguntaSeguridad.text.clear()

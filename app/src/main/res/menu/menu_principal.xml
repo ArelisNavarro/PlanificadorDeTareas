@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_idioma"
-        android:title="Esp/Eng" />
+        android:id="@+id/menu_desmarcartodo"
+        android:title="Desmarcar todo" />
     <item
         android:id="@+id/menu_tema"
         android:title="Claro/Oscuro" />

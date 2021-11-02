@@ -1,23 +1,17 @@
-package com.example.planificadordetareas
+package com.example.planificadordetareas.fragments
 
-import android.content.Context
+import android.content.ContentValues
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
 import android.widget.*
-import androidx.fragment.app.Fragment
 import androidx.core.view.children
-import androidx.fragment.app.FragmentManager
+import com.example.planificadordetareas.R
+import com.example.planificadordetareas.activitys.ActivityListaDeTareas
 
-class PlanificadorDiario : Fragment(), View.OnClickListener {
+class PlanificadorDiario : BaseFragment(), View.OnClickListener {
 
 
-    val manager:FragmentManager
-    get() = requireActivity().supportFragmentManager
-
-    val preferences: SharedPreferences
-    get()=requireContext().getSharedPreferences("registrar_usuario", Context.MODE_PRIVATE)
 
 
     override fun onCreateView(
@@ -46,12 +40,14 @@ class PlanificadorDiario : Fragment(), View.OnClickListener {
 
         when(item.itemId){
 
-            R.id.menu_idioma->{ }
-            R.id.menu_tema->{ }
-            R.id.menu_cerrarSesion->{
+            R.id.menu_desmarcartodo ->{
+
+            }
+            R.id.menu_tema ->{ }
+            R.id.menu_cerrarSesion ->{
 
                 var transaccion=manager?.beginTransaction()
-                transaccion?.replace(R.id.fragmentContainerView,IniciarSesion())
+                transaccion?.replace(R.id.fragmentContainerView, IniciarSesion())
                 transaccion?.commit()
 
                 preferences?.edit()?.putBoolean("Estado_Inicio_Sesion",false)?.commit()
@@ -62,10 +58,10 @@ class PlanificadorDiario : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-            val irAlDia=Intent(requireContext(),MainActivity2::class.java)
-            var bundl=Bundle()
-            bundl.putString("dia",(v as TextView).text.toString())
-            startActivity(irAlDia,bundl)
+            val irAlDia=Intent(requireContext(), ActivityListaDeTareas::class.java)
+
+                irAlDia.putExtra("dia",(v as TextView).text.toString())
+            startActivity(irAlDia)
     }
 }
 
