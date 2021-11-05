@@ -10,8 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlanificadorDeTareas">
-
-
         <activity
             android:name=".activitys.ActivityListaDeTareas"
             android:exported="false" />

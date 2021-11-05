@@ -8,11 +8,9 @@ import android.widget.*
 import androidx.core.view.children
 import com.example.planificadordetareas.R
 import com.example.planificadordetareas.activitys.ActivityListaDeTareas
+import com.example.planificadordetareas.utilidades.toast
 
 class PlanificadorDiario : BaseFragment(), View.OnClickListener {
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,9 +39,14 @@ class PlanificadorDiario : BaseFragment(), View.OnClickListener {
         when(item.itemId){
 
             R.id.menu_desmarcartodo ->{
-
+                var values=ContentValues()
+                values.put("estadotarea",0)
+                var resultado =db.update("Listatareas",values,null,null )
+                if (resultado>0) toast("Estado cambiado con exito") else toast("No se pudo cambiar el estado llame a soporte")
             }
-            R.id.menu_tema ->{ }
+            R.id.menu_tema ->{
+                db.delete("Listatareas",null,null)
+            }
             R.id.menu_cerrarSesion ->{
 
                 var transaccion=manager?.beginTransaction()

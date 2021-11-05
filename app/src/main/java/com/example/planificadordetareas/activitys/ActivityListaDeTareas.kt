@@ -55,22 +55,17 @@ class ActivityListaDeTareas : BaseActivity() {
                 if (usuarioActivo == -1) toast("Usuario No Valido")
 
             } else {
-
                 try {
-
                     db.execSQL("INSERT INTO Listatareas( dia,nombre, descripcion, idusuario, estadotarea ) VALUES ('$diaActual','$textoAgregarTarea','$textoAgregarDescripcion', '$usuarioActivo', 0 )")
                     actualizarLista(diaActual, usuarioActivo, adapter)
 
                 } catch (e: Exception) {
                     toast("error: ${e.message}")
-
                 }
             }
             agregarTarea.visible(false)
             agregarDescripcion.visible(false)
             botonAgregarTarea.visible(false)
-
-
             agregarTarea.text.clear()
             agregarDescripcion.text.clear()
         }
@@ -80,8 +75,6 @@ class ActivityListaDeTareas : BaseActivity() {
             agregarDescripcion.visible(true)
             botonAgregarTarea.visible(true)
         }
-
-
         adapter.cheked = { tarea->
 
                 var content=ContentValues()
@@ -93,8 +86,6 @@ class ActivityListaDeTareas : BaseActivity() {
                     actualizarLista(diaActual,usuarioActivo,adapter)
                 }else{ toast("No se pudo actuaizar")}
         }
-
-
         adapter.eliminar={ tarea->
 
                 var params= arrayOf(tarea.id.toString())
@@ -102,10 +93,7 @@ class ActivityListaDeTareas : BaseActivity() {
 
                 if (result>0){
                     actualizarLista(diaActual,usuarioActivo,adapter)
-                }else{
-                    toast("No se elimino nada")
-                }
-
+                }else{toast("No se elimino nada")}
         }
 
     }
@@ -133,9 +121,7 @@ class ActivityListaDeTareas : BaseActivity() {
                     cursor.getInt(5)
                 )
             )
-
         }
-
         while (cursor.moveToNext()) {
             lista.add(
                 Tareas(
@@ -147,6 +133,9 @@ class ActivityListaDeTareas : BaseActivity() {
                 )
             )
         }
+
+
+
         objetoadaptador.actualizarLista(lista)
     }
 }

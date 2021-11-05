@@ -6,7 +6,7 @@
         android:title="Desmarcar todo" />
     <item
         android:id="@+id/menu_tema"
-        android:title="Claro/Oscuro" />
+        android:title="Eliminar todo" />
     <item
         android:id="@+id/menu_cerrarSesion"
         android:title="Cerrar sesiòn" />
